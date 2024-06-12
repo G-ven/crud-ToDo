@@ -1,0 +1,280 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+/* FONTS */
+.caveat {
+  font-family: "Caveat", cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.roboto-regular {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+  
+.roboto-black {
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  color: #207b6e;
+}
+
+
+
+/* MISE EN FORME GÉNÉRALE */
+body{
+  margin: 8rem;
+  background-image: url(pluie.jpg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  font: "roboto-regular";
+   
+}
+
+h1{
+  font-size: 60px;
+  color: white;
+  margin-bottom: 1em;
+}
+
+
+
+/* FORMULAIRE d'AJOUT */
+.formulaire{
+  width: 420px;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, .2);
+  backdrop-filter: blur(5px);
+  box-shadow: 0 0 15px #1e362d;
+  color: white;
+  border-radius: 10px;
+  margin-top: 3rem;
+  margin-bottom: 5rem;  
+  padding: 1rem 2rem;
+    
+}
+
+.formLine{
+  position: relative;
+  margin: 1rem 0;
+  border-bottom: 1px solid white;
+}
+
+.formLine label{
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  color: white;
+  font-size: 1rem;
+  pointer-events: none;
+}
+
+input:focus ~ label,
+input:focus ~ :valid{
+  top: -5px;
+}
+
+.formLine input{
+  width: 100%;
+  height: 50px;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  padding: 0 35px 0 5px;
+  color: white;
+}
+
+.button{
+  width: 50%;
+  margin-top: 1em;
+  height:  30px;
+  background-color: #b4deb8;
+  border: none;
+  outline: none;
+  font-size: 1em;
+  display: flex;
+  justify-content: center;
+  border-radius: 20px; 
+}
+
+.button input{
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: none;
+  color: #2b4c40; 
+}
+
+.ajout{
+  display: flex;
+  justify-content: flex-end;
+  cursor: pointer;
+}
+
+
+
+/* LISTE DES TÂCHES */
+form{
+  align-items: center;
+}
+
+.tape{
+  position: absolute;
+  height: 40px;
+  width: 12rem;
+  background: rgba(255, 255, 235, 0.6);
+  box-shadow: 0 1px 3px rgba(0,0,0,.4);
+  margin-top: -70px;
+  transform: rotate(-2deg);
+}
+
+.post-it{
+  padding: 1rem;
+  padding-top: 3rem;
+  padding-bottom: 2rem;
+  position: relative;
+  background-color: #fae9a4;
+  width: auto;
+  height: auto;
+  color:#130d6b;
+  display: flex;
+  flex-direction: column;   
+}
+
+/* gestion de l'ombrage du post-it */
+.post-it::before {
+  z-index: -1;
+  position: absolute;
+  content: "";
+  bottom: 25px;
+  left: 10px;
+  width: 50%;
+  top: 80%;
+  max-width: auto;
+  background: #2b4c40;
+  box-shadow: 0 35px 20px #1e362d;
+  transform: rotate(-8deg);
+}
+
+.post-it::after {
+  z-index: -1;
+  position: absolute;
+  content: "";
+  bottom: 25px;
+  left: 10px;
+  width: 50%;
+  top: 80%;
+  max-width: auto;
+  background: #2b4c40;
+  box-shadow: 0 35px 20px #1e362d;
+  transform: rotate(8deg);
+  right: 10px;
+  left: auto;
+}
+
+td{
+  width: auto;
+  padding: 1em;
+}
+
+/* bouton suppression plusieurs tâches */
+.button2{
+  width: 70%;
+  height: 30px;
+  margin-top: 2em;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  position: relative;
+  background-color: #f4a34b;
+  cursor: pointer;
+  font-size: 1em;
+  display: flex;
+  justify-content: center; 
+}
+
+.button2 input{
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+}
+
+.button2:hover{
+  box-shadow: 0 6px #f29325;
+}
+
+button{
+  outline: none;
+  border: none;
+  background: none;
+  color: #f69b37;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+/* checkboxbox - modification - suppression */
+td path{
+  cursor: pointer;
+  padding-left: 20px;
+}
+
+input[type="checkbox"]{
+  -webkit-appearance:none;
+  -moz-appearance: none;
+  -ms-appearance:none;
+  cursor: pointer;
+  border-radius: 4px;
+  height: 15px;
+  width: 15px;
+  background: #fff;
+  border: 1px solid rgb(189, 188, 188);
+}
+
+input[type="checkbox"]:checked{
+  background: #207b6e;
+  margin: 0px;
+  position: relative;
+  
+}
+
+input[type="checkbox"]:checked:before{
+  font-family: "FontAwesome";
+  content: '\f00c';
+  display: block;
+  color: white;
+  font-size: 10px;
+  padding: 2px;
+  position: absolute;
+
+}
+
+
+/* 'FORMULAIRE' MODIFICATIONS D'UNE TÂCHE */
+
+.inputTask{
+  outline-color: #b4deb8;
+}
+.inputCategorie{
+  outline-color: #b4deb8;
+}
+
+.valider {
+  width: 20%;
+  height:  20px;
+  background-color: #b4deb8;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+}
