@@ -1,6 +1,6 @@
 # To Do Liste
 
-C'est une application web simple, pensé pour gérer une liste de tâches. Elle a été développée en PHP avec une base de données MySQL.
+C'est une application web simple, pensé pour gérer une liste de tâches. Elle a été développée en PHP avec une base de données MySQL!
 
 ## Table des matières
 
